@@ -3,7 +3,7 @@ let correctAnswers = 0;
 let incorrectAnswers = 0;
 let unanswered = 0;
 let intervalId;
-let number = 10;
+let number = 40;
 
 //setting up the function for questions
 const questions = [{
@@ -19,9 +19,41 @@ const questions = [{
     answerList: ["his feet", "wheelie", "warp star", "flies"],
     answer: 2
 
-},{
+},{ 
+    question: "when swallowing a 'Sir Kibble' what power does kirby get?",
+    answerList: ["cutter", "slicer", "sword", "knife"],
+    answer: 0
 
-}]
+},{
+    question: "what enemy is a rock?",
+    answerList: ["Chef Kawasaki", "sword knight", "C.A.T", "rocky"],
+    answer: 3
+
+},{
+    question: "what color was Kirby originally?",
+    answerList: ["pink", "white", "yellow", "red"],
+    answer: 1
+
+},{
+    question: "what is the name of the planet Kirby lives on?",
+    answerList: ["Rockstar", "Shockstar", "Popstar", "Cakestar"],
+    answer: 2
+},{
+    question: "what is Kirby's famous sound?",
+    answerList: ["Poya!", "Boyo!", "Paya!", "Poyo!"],
+    answer: 3
+},{
+    question: "who is the ruler of the planet Kibry lives on?",
+    answerList: ["King Dedede", "Meta Knight", "Marx", "Galactic Knight"],
+    answer: 0
+},{
+    question: "how many games did kirby have on the Super Nintendo Entertainment System?",
+    answerList: ["4", "2", "1", "3"],
+    answer: 1
+
+}];
+
+
 
 //timer function
 $("#start").on("click", function() {
@@ -31,7 +63,7 @@ $("#start").on("click", function() {
     $(this).hide();
 
 //displays timer
-    $("#time").html("<h3>Time remaining: 10 seconds </h3>" );
+    $("#time").html("<h3>Time remaining: 40 seconds </h3>" );
 
 //starts timer countdown
     run()
@@ -60,55 +92,55 @@ $("#answer1").html("<input type='radio' name='answer1' value='0'>" + "<label>" +
     );
 
     // Question 4
-    // $("#question4").html("<h3>" + questions[3].question + "</h3>");
-    // $("#answer4").html("<input type='radio' name='answer4' value='0'>" + "<label>" + questions[3].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer4' value='1'>" + "<label>" + questions[3].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer4' value='2'>" + "<label>" + questions[3].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[3].answerList[3] + "</label><br><br>"
-    // );
+    $("#question4").html("<h3>" + questions[3].question + "</h3>");
+    $("#answer4").html("<input type='radio' name='answer4' value='0'>" + "<label>" + questions[3].answerList[0] + "</label>"
+        + "<input type='radio' name='answer4' value='1'>" + "<label>" + questions[3].answerList[1] + "</label>"
+        + "<input type='radio' name='answer4' value='2'>" + "<label>" + questions[3].answerList[2] + "</label>"
+        + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[3].answerList[3] + "</label><br><br>"
+    );
 
-    // // Question 5
-    // $("#question5").html("<h3>" + questions[4].question + "</h3>");
-    // $("#answer5").html("<input type='radio' name='answer5' value='0'>" + "<label>" + questions[4].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer5' value='1'>" + "<label>" + questions[4].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer5' value='2'>" + "<label>" + questions[4].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer5' value='3'>" + "<label>" + questions[4].answerList[3] + "</label><br><br>"
-    // );
-    // // Question 6
-    // $("#question6").html("<h3>" + questions[5].question + "</h3>");
-    // $("#answer6").html("<input type='radio' name='answer6' value='0'>" + "<label>" + questions[5].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[5].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[5].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[5].answerList[3] + "</label><br><br>"
-    // );
-    // // Question 7
-    // $("#question7").html("<h3>" + questions[6].question + "</h3>");
-    // $("#answer7").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
-    // );
-    // // Question 8
-    // $("#question8").html("<h3>" + questions[6].question + "</h3>");
-    // $("#answer8").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
-    // );
-    // // Question 9
-    // $("#question9").html("<h3>" + questions[6].question + "</h3>");
-    // $("#answer9").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
-    // );
-    // // Question 10
-    // $("#question10").html("<h3>" + questions[6].question + "</h3>");
-    // $("#answer10").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
-    //     + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
-    //     + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
-    //     + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
-    // );
+    // Question 5
+    $("#question5").html("<h3>" + questions[4].question + "</h3>");
+    $("#answer5").html("<input type='radio' name='answer5' value='0'>" + "<label>" + questions[4].answerList[0] + "</label>"
+        + "<input type='radio' name='answer5' value='1'>" + "<label>" + questions[4].answerList[1] + "</label>"
+        + "<input type='radio' name='answer5' value='2'>" + "<label>" + questions[4].answerList[2] + "</label>"
+        + "<input type='radio' name='answer5' value='3'>" + "<label>" + questions[4].answerList[3] + "</label><br><br>"
+    );
+    // Question 6
+    $("#question6").html("<h3>" + questions[5].question + "</h3>");
+    $("#answer6").html("<input type='radio' name='answer6' value='0'>" + "<label>" + questions[5].answerList[0] + "</label>"
+        + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[5].answerList[1] + "</label>"
+        + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[5].answerList[2] + "</label>"
+        + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[5].answerList[3] + "</label><br><br>"
+    );
+    // Question 7
+    $("#question7").html("<h3>" + questions[6].question + "</h3>");
+    $("#answer7").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
+        + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
+        + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
+        + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
+    );
+    // Question 8
+    $("#question8").html("<h3>" + questions[6].question + "</h3>");
+    $("#answer8").html("<input type='radio' name='answer8' value='0'>" + "<label>" + questions[7].answerList[0] + "</label>"
+        + "<input type='radio' name='answer8' value='1'>" + "<label>" + questions[7].answerList[1] + "</label>"
+        + "<input type='radio' name='answer8' value='2'>" + "<label>" + questions[7].answerList[2] + "</label>"
+        + "<input type='radio' name='answer8' value='3'>" + "<label>" + questions[7].answerList[3] + "</label><br><br>"
+    );
+    // Question 9
+    $("#question9").html("<h3>" + questions[6].question + "</h3>");
+    $("#answer9").html("<input type='radio' name='answer9' value='0'>" + "<label>" + questions[8].answerList[0] + "</label>"
+        + "<input type='radio' name='answer9' value='1'>" + "<label>" + questions[8].answerList[1] + "</label>"
+        + "<input type='radio' name='answer9' value='2'>" + "<label>" + questions[8].answerList[2] + "</label>"
+        + "<input type='radio' name='answer9' value='3'>" + "<label>" + questions[8].answerList[3] + "</label><br><br>"
+    );
+    // Question 10
+    $("#question10").html("<h3>" + questions[6].question + "</h3>");
+    $("#answer10").html("<input type='radio' name='answer10' value='0'>" + "<label>" + questions[9].answerList[0] + "</label>"
+        + "<input type='radio' name='answer10' value='1'>" + "<label>" + questions[9].answerList[1] + "</label>"
+        + "<input type='radio' name='answer10' value='2'>" + "<label>" + questions[9].answerList[2] + "</label>"
+        + "<input type='radio' name='answer10' value='3'>" + "<label>" + questions[9].answerList[3] + "</label><br><br>"
+    );
 
         // submit button
         $("#submit").html("<button id='done' class='btn'>Finished!</button>");
@@ -192,6 +224,10 @@ function keepingScore() {
     let userAnswer5 = $("input[name='answer5']:checked").val();
     let userAnswer6 = $("input[name='answer6']:checked").val();
     let userAnswer7 = $("input[name='answer7']:checked").val();
+    let userAnswer8 = $("input[name='answer8']:checked").val();
+    let userAnswer9 = $("input[name='answer9']:checked").val();
+    let userAnswer10 = $("input[name='answer10']:checked").val();
+
 
     // Question 1
     if (userAnswer1 === undefined) {
@@ -283,6 +319,48 @@ function keepingScore() {
         unanswered++;
     }
     else if (userAnswer7 == questions[6].answer) {
+
+        correctAnswers++;
+    }
+    else {
+
+        incorrectAnswers++;
+    }  
+
+    // Question 8
+    if (userAnswer8 === undefined) {
+
+        unanswered++;
+    }
+    else if (userAnswer8 == questions[7].answer) {
+
+        correctAnswers++;
+    }
+    else {
+
+        incorrectAnswers++;
+    }  
+
+    // Question 9
+    if (userAnswer9 === undefined) {
+
+        unanswered++;
+    }
+    else if (userAnswer9 == questions[8].answer) {
+
+        correctAnswers++;
+    }
+    else {
+
+        incorrectAnswers++;
+    }  
+
+    // Question 10
+    if (userAnswer10 === undefined) {
+
+        unanswered++;
+    }
+    else if (userAnswer10 == questions[9].answer) {
 
         correctAnswers++;
     }
