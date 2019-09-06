@@ -49,7 +49,7 @@ const questions = [{
 },{
     question: "how many games did kirby have on the Super Nintendo Entertainment System?",
     answerList: ["4", "2", "1", "3"],
-    answer: 1
+    answer: 3
 
 }];
 
